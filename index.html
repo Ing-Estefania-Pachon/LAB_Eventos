@@ -4,6 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
     <link rel="stylesheet" href="styles.css">
     <title>Publicaciones</title>
 </head>
@@ -48,7 +50,8 @@
             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Cerrar"></button>
         </div>
 
-        <button type="button" class="btn btn-lg mt-3 btn-agregar" data-bs-toggle="modal" data-bs-target="#contactoModal">
+        <button id="agregar" type="button" class="btn btn-lg mt-3 btn-agregar mx-auto" data-bs-toggle="modal"
+            data-bs-target="#contactoModal">
             Agregar
         </button>
 
@@ -57,35 +60,36 @@
             <div class="modal-dialog modal-dialog-centered">
                 <div class="modal-content" style="background-color: #ffff; border-radius: 15px;">
                     <div class="modal-header border-0">
-                        <h2 class="modal-title w-100 text-center text-info" id="contactoModalLabel">Formulario de
-                            Contacto</h2>
+                        <h2 class="modal-title w-100 text-center text-info" id="contactoModalLabel">Publicación</h2>
                         <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
                             aria-label="Cerrar"></button>
                     </div>
 
                     <div class="formContenedor">
-                        <form id="formulario-contacto" action="#" method="post">
-                            <label for="nombre">Ingrese el título de su publicación</label>
-                            <input type="text" id="nombre" name="nombre" placeholder="Título" required>
+                        <form id="formulario">
+                            <label for="titulo">Ingrese el título de su publicación</label>
+                            <input type="text" id="titulo" name="titulo" placeholder="Título" required>
                             <br>
-                            <label for="informacion">Ingrese el contenido de su publicación</label>
-                            <input id="informacion" name="informacion" rows="5" placeholder="Es el mejor título"
-                                required>
+                            <label for="descripcion">Ingrese el contenido de su publicación</label>
+                            <textarea id="descripcion" name="descripcion" rows="5" placeholder="Escribe tu publicación"
+                                required></textarea>
                             <br>
-                            <div class="mb-3">
-                                <label for="formFileSm" class="form-label">Elegir archivo o imagen</label>
-                                <input class="form-control form-control-sm" id="formFileSm" type="file">
-                            </div>
+                            <label for="imagen" class="form-label">Elegir archivo o imagen</label>
+                            <input class="form-control form-control-sm" id="imagen" type="file" accept="image/*">
                             <br>
-                            <button type="submit">Subir</button>
+                            <img id="vistaPrevia" style="max-width: 100%; display: none;" />
+                            <br>
+                            <button type="submit" class="btn btn-primary mt-2">Subir</button>
                         </form>
+
                     </div>
                 </div>
             </div>
         </div>
 
+        <div id="feed" class="masonry-layout">
 
-
+        </div>
 
     </main>
 
@@ -93,6 +97,7 @@
 
     </footer>
 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="script.js"></script>
 </body>
 
