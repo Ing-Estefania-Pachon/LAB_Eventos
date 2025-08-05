@@ -1,0 +1,15 @@
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Major Mono Display', monospace;
+}
+
+nav {
+    margin: 0 px;
+    padding: 0 px;
+    background-image: url("./imagenes/lago.png");
+}
